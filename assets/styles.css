@@ -1,0 +1,138 @@
+/* Definición de variables CSS para colores y fuentes, facilitando la personalización. */
+:root {
+    --primary-color: #1E88E5; /* Azul vibrante para elementos principales (títulos, botones) */
+    --secondary-color: #FFC107; /* Amarillo para acentos o advertencias */
+    --background-color: #4c8079; /* Gris claro distintivo para el fondo general */
+    --text-color: #212121; /* Gris muy oscuro (casi negro) para el texto principal */
+    --card-background: #FFFFFF; /* Blanco puro para los contenedores de contenido */
+    --border-color: #D0D0D0; /* Gris claro para bordes sutiles */
+    --font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; /* Fuente moderna y legible */
+}
+
+/* Estilos generales para el cuerpo de la aplicación */
+body {
+    font-family: var(--font-family);
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+/* Asegura que el contenedor principal de Streamlit use el color de fondo definido */
+.stApp {
+    background-color: var(--background-color);
+}
+
+/* Estilos para todos los niveles de títulos (h1 a h6) */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--primary-color); /* Color primario para todos los títulos */
+    font-weight: 600; /* Negrita para mayor énfasis */
+    margin-top: 1.5em; /* Espacio superior */
+    margin-bottom: 0.8em; /* Espacio inferior */
+}
+
+/* Estilo específico para el título principal (h1) */
+h1 {
+    font-size: 2.5em; /* Tamaño de fuente grande */
+    text-align: center; /* Centrado */
+    padding-bottom: 0.5em; /* Espacio debajo del texto */
+    border-bottom: 2px solid var(--primary-color); /* Línea divisoria */
+    margin-bottom: 1.5em; /* Más espacio inferior */
+}
+
+/* Estilos para la barra lateral (sidebar) */
+/* Los selectores .css-1d391kg y .css-1dp5xxc son específicos de la estructura DOM de Streamlit
+   y pueden requerir ajustes con futuras actualizaciones de Streamlit. */
+.css-1d391kg, .css-1dp5xxc {
+    background-color: #1A1A1A; /* Fondo oscuro para la barra lateral */
+    color: #FFFFFF; /* Texto blanco */
+    padding-top: 2em; /* Espacio superior */
+}
+.css-1d391kg h2, .css-1dp5xxc h2 {
+    color: #FFFFFF; /* Títulos de la barra lateral en blanco */
+}
+.css-1d391kg label, .css-1dp5xxc label {
+    color: #BBBBBB; /* Etiquetas de la barra lateral en gris claro */
+}
+.sidebar .sidebar-content { /* Selector más general para el contenido de la sidebar */
+    background-color: #262730;
+}
+.st-emotion-cache-1pxx9r2 { /* Etiqueta del uploader, puede cambiar con actualizaciones */
+    color: var(--text-color);
+}
+
+/* Estilos para los botones de Streamlit */
+.stButton > button {
+    background-color: var(--primary-color); /* Color de fondo primario */
+    color: white; /* Texto blanco */
+    border-radius: 0.5em; /* Bordes redondeados */
+    padding: 0.6em 1.2em; /* Relleno interno */
+    font-weight: 500; /* Grosor de la fuente */
+    border: none; /* Sin borde */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transición suave para hover */
+}
+.stButton > button:hover {
+    background-color: #1565C0; /* Azul ligeramente más oscuro al pasar el ratón */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil al pasar el ratón */
+}
+
+/* Estilos para el área de texto (textarea) */
+.stTextArea > div > div > textarea {
+    border-radius: 0.5em; /* Bordes redondeados */
+    border: 1px solid var(--border-color); /* Borde sutil */
+    padding: 0.8em; /* Relleno interno */
+    background-color: var(--card-background); /* Fondo blanco */
+    color: var(--text-color); /* Color de texto */
+}
+.stTextArea > div > div > textarea:focus {
+    border-color: var(--primary-color); /* Borde primario al enfocar */
+    box-shadow: 0 0 0 0.2rem rgba(30, 136, 229, 0.25); /* Sombra de enfoque (color del primary-color) */
+    outline: none; /* Elimina el contorno por defecto del navegador */
+}
+
+/* Estilos para los contenedores de gráficos (Plotly) y tablas (DataFrame) */
+.stPlotlyChart, .stDataFrame {
+    border-radius: 0.8em; /* Bordes más redondeados */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Sombra más pronunciada para efecto de "tarjeta" */
+    padding: 1.5em; /* Relleno interno */
+    background-color: var(--card-background); /* Fondo blanco */
+    margin-bottom: 1.5em; /* Espacio inferior */
+}
+
+/* Estilos para los mensajes de alerta (info, warning, error, success) */
+.stAlert {
+    border-radius: 0.5em; /* Bordes redondeados */
+    font-weight: 500; /* Texto seminegrita */
+}
+.stAlert.st-info {
+    background-color: #E3F2FD; /* Azul muy claro */
+    color: #1976D2; /* Azul oscuro */
+    border-left: 5px solid #1976D2; /* Borde izquierdo de color */
+}
+.stAlert.st-warning {
+    background-color: #FFF3E0; /* Naranja claro */
+    color: #F57C00; /* Naranja oscuro */
+    border-left: 5px solid #F57C00;
+}
+.stAlert.st-success {
+    background-color: #E8F5E9; /* Verde claro */
+    color: #388E3C; /* Verde oscuro */
+    border-left: 5px solid #388E3C;
+}
+.stAlert.st-error {
+    background-color: #FFEBEE; /* Rojo claro */
+    color: #D32F2F; /* Rojo oscuro */
+    border-left: 5px solid #D32F2F;
+}
+
+/* Estilos para los elementos de radio y checkboxes */
+.stRadio > label, .stCheckbox > label {
+    font-weight: 500; /* Texto seminegrita para las etiquetas */
+    color: var(--text-color);
+}
+.stRadio div[role="radiogroup"] > label > div > p {
+    font-weight: normal; /* El texto de la opción de radio en peso normal */
+}
+
+/* Estilos para los contenedores de columnas */
+.css-1avcm0c { /* Selector de columnas (puede variar con actualizaciones de Streamlit) */
+    gap: 2rem; /* Espacio entre columnas */
+}
